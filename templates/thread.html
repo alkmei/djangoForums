@@ -1,15 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
 <main class="thread-container">
-    <ul class="post-list">
+    <ol class="post-list">
         {% for post in posts %}
             <li class="post-inner">
                 <section class="post-user">
-                    <img src="{{ post.creator.profile.image.url }}" alt="{{ post.creator.username }}">
+                    <img class="post-user__picture" src="{{ post.creator.profile.image.url }}" alt="{{ post.creator.username }}">
+                    <a class="post-user__name" href="">{{ post.creator.username }}</a>
                 </section>
-                <section class="post-content">{{ post.content }}</section>
+                <section class="post-content">
+                    <header class="post-content__details">
+                        <span class="post-content__details-time">
+                            {{ post.created_at }}
+                        </span>
+                        <span class="post-content__details-id">#{{ post.post_id }}</span>
+                    </header>
+                    {{ post.content }}
+                </section>
             </li>
         {% endfor %}
-    </ul>
+    </ol>
 </main>
 {% endblock %}

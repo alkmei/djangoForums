@@ -29,6 +29,15 @@ class Post(models.Model):
     thread = models.ForeignKey(Thread, on_delete=models.CASCADE)
     creator = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    post_id = models.PositiveIntegerField()
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            last_post = (
+                Post.objects.filter(thread=self.thread).order_by("-post_id").first()
+            )
+            self.post_id = last_post.post_id + 1 if last_post else 1
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"Post #{self.id} in {self.thread.title}"
