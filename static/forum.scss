@@ -1,0 +1,28 @@
+.forum-container {
+  max-width: 1170px;
+  margin: auto;
+  padding: 1rem;
+  .thread-list {
+    border: 2px solid var(--lavender);
+    border-radius: 1rem;
+    background: var(--mantle);
+    width: 100%;
+    &__node {
+      margin: 1rem;
+      list-style-type: none;
+      border-bottom: 1px solid var(--lavender);
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--lavender);
+      }
+      a {
+        font-size: 1.75rem;
+        text-decoration: none;
+        color: var(--blue);
+        &:hover {
+          color: var(--rosewater);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

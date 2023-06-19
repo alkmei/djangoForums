@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "djangoforums"
+version = "0.1.0"
+description = ""
+authors = ["Alvin Mei <alvinkmei@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.2"
+libsass = "^0.22.0"
+django-compressor = "^4.3.1"
+django-sass-processor = "^1.2.2"
+django-autoslug = "^1.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

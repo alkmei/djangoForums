@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main class="home-container">
+        <h1>Forum Index</h1>
+        <ul>
+            {% for forum in forums %}
+                <li class="forum-node">
+                    <a href="{% url 'forum_detail' forum.slug %}">{{ forum.name }}</a>
+                    <p class="forum-node__description">{{ forum.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+{% endblock %}

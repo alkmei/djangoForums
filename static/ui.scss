@@ -1,0 +1,33 @@
+.navbar {
+  //border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+  backdrop-filter: blur(10px);
+  position: sticky;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 1rem;
+
+    .icon {
+      font-size: 2rem;
+      color: var(--lavender);
+    }
+
+    .links {
+      font-size: 1.5rem;
+      display: flex;
+      gap: 1rem;
+
+      a {
+        text-decoration: none;
+        color: var(--text);
+        &:hover {
+          color: var(--blue);
+        }
+      }
+    }
+  }
+}

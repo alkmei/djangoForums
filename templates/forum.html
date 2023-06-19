@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main class="forum-container">
+        <ol class="thread-list">
+            {% for thread in threads %}
+                <li class="thread-list__node">
+                    <a href="">{{ thread.title }}</a>
+                </li>
+            {% endfor %}
+        </ol>
+    </main>
+{% endblock %}
