@@ -1,0 +1,13 @@
+@mixin clickable-link {
+  text-decoration: none;
+  color: var(--blue);
+  &:hover {
+    text-decoration: underline;
+    color: var(--rosewater);
+  }
+}
+
+@mixin rounded-box {
+  border: 2px solid var(--lavender);
+  border-radius: 1rem;
+}

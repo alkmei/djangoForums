@@ -4,8 +4,7 @@
   padding: 1rem;
 
   .thread-list {
-    border: 2px solid var(--lavender);
-    border-radius: 1rem;
+    @include rounded-box;
     background: var(--mantle);
     width: 100%;
 
@@ -20,14 +19,8 @@
         margin: 1rem;
 
         a {
+          @include clickable-link;
           font-size: 1.75rem;
-          text-decoration: none;
-          color: var(--blue);
-
-          &:hover {
-            color: var(--rosewater);
-            text-decoration: underline;
-          }
         }
       }
 

@@ -1,6 +1,7 @@
-@import "colors";
-@import "base";
-@import "ui";
-@import "home";
-@import "forum";
-@import "thread";
+@import "partials/colors";
+@import "partials/mixin";
+@import "core/base";
+@import "core/ui";
+@import "core/home";
+@import "forums/forum";
+@import "forums/thread";

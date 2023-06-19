@@ -8,9 +8,8 @@
     width: 100%;
 
     .post-inner {
+      @include rounded-box;
       list-style-type: none;
-      border: 2px solid var(--lavender);
-      border-radius: 0.5rem;
       padding: 1rem;
       display: flex;
       gap: 1rem;
@@ -40,13 +39,8 @@
           border-radius: 1rem;
         }
         &__name {
+          @include clickable-link;
           font-size: 1.5rem;
-          text-decoration: none;
-          color: var(--blue);
-          &:hover {
-            color: var(--rosewater);
-            text-decoration: underline;
-          }
         }
       }
     }

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <main class="forum-container">
+        <a href="{% url 'home' %}" class="back-link"><< Back</a>
         <ul class="thread-list">
             {% for thread in threads %}
                 <li class="thread-list__node">
