@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "sass_processor",
     "forums",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,6 @@ STATICFILES_FINDERS = [
 STATIC_ROOT = BASE_DIR / "static"
 
 SASS_PROCESSOR_ROOT = STATIC_ROOT
+
+MEDIA_ROOT = BASE_DIR / "media"  # Directory where uploaded media is saved.
+MEDIA_URL = "/media/"  # Public URL at the browser

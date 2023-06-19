@@ -5,7 +5,7 @@
         {% for post in posts %}
             <li class="post-inner">
                 <section class="post-user">
-                    <img src="" alt="">
+                    <img src="{{ post.creator.profile.image.url }}" alt="{{ post.creator.username }}">
                 </section>
                 <section class="post-content">{{ post.content }}</section>
             </li>
