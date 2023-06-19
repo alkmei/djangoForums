@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="thread-container">
+    <ul class="post-list">
+        {% for post in posts %}
+            <li class="post-inner">
+                <section class="post-user">
+                    <img src="" alt="">
+                </section>
+                <section class="post-content">{{ post.content }}</section>
+            </li>
+        {% endfor %}
+    </ul>
+</main>
+{% endblock %}

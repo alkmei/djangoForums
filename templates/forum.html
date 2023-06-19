@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
     <main class="forum-container">
-        <ol class="thread-list">
+        <ul class="thread-list">
             {% for thread in threads %}
                 <li class="thread-list__node">
-                    <a href="">{{ thread.title }}</a>
+                    <div class="thread-list__node-content">
+                        <a href="{% url 'thread_detail' thread.forums.slug thread.slug %}">{{ thread.title }}</a>
+                    </div>
                 </li>
             {% endfor %}
-        </ol>
+        </ul>
     </main>
 {% endblock %}
