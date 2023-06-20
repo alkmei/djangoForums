@@ -1,7 +1,5 @@
 .home-container {
-  max-width: 1170px;
-  margin: auto;
-  padding: 1rem;
+  @include page-container;
   .forum-node {
     @include rounded-box;
     list-style-type: none;

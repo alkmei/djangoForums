@@ -11,3 +11,9 @@
   border: 2px solid var(--lavender);
   border-radius: 1rem;
 }
+
+@mixin page-container {
+  max-width: 1170px;
+  margin: auto;
+  padding: 1rem;
+}

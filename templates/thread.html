@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <main class="thread-container">
+    <h1 class="container__header">{{ thread.title }}</h1>
     <a href="{% url 'forum_detail' thread.forums.slug %}" class="back-link"><< Back</a>
     <ol class="post-list">
         {% for post in posts %}

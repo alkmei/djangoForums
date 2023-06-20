@@ -4,20 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% sass_src 'main.scss' %}" rel="stylesheet" type="text/css" />
+    <link href="{% sass_src 'main.scss' %}" rel="stylesheet" type="text/css"/>
     <title>Title</title>
 </head>
 <body>
-    <header class="navbar">
-        <div class="navbar__content">
-              <h1 class="icon">DjangoForums</h1>
-              <nav class="links">
-                      <a href="/">Forums</a>
-              </nav>
-        </div>
-    </header>
-    {% block content %}
-    
-    {% endblock %}
+<header class="navbar">
+    <div class="navbar__content">
+        <h1 class="icon">DjangoForums</h1>
+        <nav class="links">
+            <a href="/">Forums</a>
+            <a href="{% url 'login' %}">Log In</a>
+            <a href="{% url 'register' %}">Register</a>
+        </nav>
+    </div>
+</header>
+{% block content %}
+
+{% endblock %}
 </body>
 </html>

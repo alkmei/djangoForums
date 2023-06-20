@@ -11,7 +11,7 @@ def forum_index(request):
 def forum_detail(request, forum_slug):
     forum = get_object_or_404(Forum, slug=forum_slug)
     threads = forum.thread_set.all()
-    context = {"threads": threads}
+    context = {"threads": threads, "forum": forum}
     return render(request, "forum.html", context)
 
 
