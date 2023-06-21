@@ -1,0 +1,9 @@
+.logout-container {
+  @include page-container;
+  h2 {
+    font-size: 2rem;
+  }
+  a {
+    font-size: 1.6rem;
+  }
+}
