@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
+from django.contrib.auth.forms import UserCreationForm
+from .models import Profile, User
 
 
-# Create your views here.
 class RegistrationView(View):
     form_class = UserCreationForm
     template_name = "users/register.html"
@@ -18,3 +18,10 @@ class RegistrationView(View):
             form.save()
             return redirect("home")
         return render(request, self.template_name, {"form": form})
+
+
+def profile(request, username):
+    user = get_object_or_404(User, username=username)
+    user_profile = get_object_or_404(Profile, user=user)
+    context = {"profile": user_profile}
+    return render(request, "users/profile.html", context)
