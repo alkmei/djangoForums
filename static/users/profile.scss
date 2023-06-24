@@ -2,4 +2,25 @@
   @include page-container;
   @include rounded-box;
   display: flex;
+  justify-content: space-between;
+
+  img {
+    max-width: 36rem;
+    max-height: 36rem;
+    border-radius: 1rem;
+  }
+
+  .left-side {
+    width: 100%;
+    padding-right: 1rem;
+    h1 {
+      border-bottom: 1px solid var(--text);
+      width: 100%;
+    }
+
+    p {
+      padding-top: 1rem;
+      font-size: 1.4rem;
+    }
+  }
 }
