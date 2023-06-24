@@ -6,7 +6,7 @@ from .models import Profile, User
 
 class RegistrationView(View):
     form_class = UserCreationForm
-    template_name = "users/register.html"
+    template_name = "registration/register.html"
 
     def get(self, request):
         form = self.form_class()

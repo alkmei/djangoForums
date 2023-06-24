@@ -9,7 +9,7 @@
                     <section class="post-user">
                         <img class="post-user__picture" src="{{ post.creator.profile.image.url }}"
                              alt="{{ post.creator.username }}">
-                        <a class="post-user__name" href="">{{ post.creator.username }}</a>
+                        <a class="post-user__name" href="{% url 'profile' post.creator.username %}">{{ post.creator.username }}</a>
                     </section>
                     <section class="post-content">
                         <header class="post-content__details">

@@ -1,3 +1,5 @@
 .profile-container {
   @include page-container;
+  @include rounded-box;
+  display: flex;
 }
