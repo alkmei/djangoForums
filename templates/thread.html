@@ -2,7 +2,22 @@
 {% block content %}
     <main class="thread-container">
         <h1 class="container__header">{{ thread.title }}</h1>
-        <a href="{% url 'forum_detail' thread.forums.slug %}" class="back-link"><< Back</a>
+        <ul class="directory-list">
+            <li>
+                <a href="/">Forums</a>
+            </li>
+            <li>
+                <a href="{% url 'forum_detail' thread.forums.slug %}">
+                    &nbsp;{{ thread.forums.name }}
+                </a>
+            </li>
+            <li>
+                <span>&nbsp;{{ thread.title }}</span>
+            </li>
+        </ul>
+        <a class="generic-button">
+            Create Reply
+        </a>
         <ol class="post-list">
             {% for post in posts %}
                 <li class="post-inner">

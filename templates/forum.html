@@ -2,15 +2,29 @@
 {% block content %}
     <main class="forum-container">
         <h1 class="container__header">{{ forum.name }}</h1>
-        <a href="{% url 'home' %}" class="back-link"><< Back</a>
-        <ul class="thread-list">
-            {% for thread in threads %}
-                <li class="thread-list__node">
-                    <div class="thread-list__node-content">
-                        <a href="{% url 'thread_detail' thread.forums.slug thread.slug %}">{{ thread.title }}</a>
-                    </div>
-                </li>
-            {% endfor %}
+        <ul class="directory-list">
+            <li>
+                <a href="/">Forums</a>
+            </li>
+            <li>
+                <span>&nbsp;{{ forum.name }}</span>
+            </li>
         </ul>
+        <a href="/" class="generic-button">
+            Create Forum
+        </a>
+        {% if threads %}
+            <ul class="thread-list">
+                {% for thread in threads %}
+                    <li class="thread-list__node">
+                        <div class="thread-list__node-content">
+                            <a href="{% url 'thread_detail' thread.forums.slug thread.slug %}">{{ thread.title }}</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h2>Forum is empty</h2>
+        {% endif %}
     </main>
 {% endblock %}
