@@ -4,7 +4,7 @@
         <h1 class="container__header">{{ thread.title }}</h1>
         <ul class="directory-list">
             <li>
-                <a href="/">Forums</a>
+                <a href="/static">Forums</a>
             </li>
             <li>
                 <a href="{% url 'forum_detail' thread.forums.slug %}">
@@ -15,16 +15,14 @@
                 <span>&nbsp;{{ thread.title }}</span>
             </li>
         </ul>
-        <a class="generic-button">
-            Create Reply
-        </a>
         <ol class="post-list">
             {% for post in posts %}
                 <li class="post-inner">
                     <section class="post-user">
                         <img class="post-user__picture" src="{{ post.creator.profile.image.url }}"
                              alt="{{ post.creator.username }}">
-                        <a class="post-user__name" href="{% url 'profile' post.creator.username %}">{{ post.creator.username }}</a>
+                        <a class="post-user__name"
+                           href="{% url 'profile' post.creator.username %}">{{ post.creator.username }}</a>
                     </section>
                     <section class="post-content">
                         <header class="post-content__details">
@@ -37,6 +35,23 @@
                     </section>
                 </li>
             {% endfor %}
+            {% if user.is_authenticated %}
+                <li class="post-inner">
+                    <section class="post-user">
+                        <img class="post-user__picture" src="{{ user.profile.image.url }}"
+                             alt="{{ user.username }}">
+                        <a class="post-user__name"
+                           href="{% url 'profile' user.username %}">{{ user.username }}</a>
+                    </section>
+                    <section class="post-content">
+                        <label class="post-reply">
+                            {% csrf_token %}
+                            {{ form.as_table }}
+                            <button class="generic-button">Reply</button>
+                        </label>
+                    </section>
+                </li>
+            {% endif %}
         </ol>
     </main>
 {% endblock %}

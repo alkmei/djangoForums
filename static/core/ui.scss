@@ -26,6 +26,7 @@
       a {
         text-decoration: none;
         color: var(--text);
+
         &:hover {
           color: var(--blue);
         }
@@ -42,11 +43,14 @@
   font-size: 1.4rem;
   padding-left: 1rem;
   display: flex;
+
   li {
     list-style-type: none;
+
     &:not(:last-child)::after {
       content: "/";
     }
+
     a {
       @include clickable-link;
     }
@@ -54,16 +58,18 @@
 }
 
 .generic-button {
-    @include rounded-box;
-    padding: 1rem;
-    font-size: 1.4rem;
-    background: var(--crust);
-    color: var(--text);
-    font-family: inherit;
-    font-weight: 800;
+  @include rounded-box;
+  padding: 1rem;
+  font-size: 1.4rem;
+  background: var(--crust);
+  color: var(--text);
+  font-family: inherit;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
 
-    &:hover {
-      background: var(--lavender);
-      color: var(--mantle);
-    }
+  &:hover {
+    background: var(--lavender);
+    color: var(--mantle);
   }
+}
