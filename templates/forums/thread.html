@@ -44,11 +44,11 @@
                            href="{% url 'profile' user.username %}">{{ user.username }}</a>
                     </section>
                     <section class="post-content">
-                        <label class="post-reply">
+                        <form method="post" class="post-reply">
                             {% csrf_token %}
                             {{ form.as_table }}
-                            <button class="generic-button">Reply</button>
-                        </label>
+                            <button class="generic-button" type="submit">Reply</button>
+                        </form>
                     </section>
                 </li>
             {% endif %}

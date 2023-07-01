@@ -26,7 +26,8 @@ def thread_detail(request, forum_slug, thread_slug):
             post.thread = thread
             post.creator = request.user
             post.save()
-            return redirect("thread_detail", thread_id=thread.id)
+            return redirect("thread_detail", forum_slug, thread_slug)
+
     else:
         form = PostForm()
 
