@@ -1,4 +1,4 @@
-.auth-container {
+.form-container {
   @include page-container;
   &__header {
     padding: 1rem;
@@ -27,13 +27,14 @@
         text-align: right;
       }
 
-      input {
+      input, textarea {
         background: var(--mantle);
         width: 100%;
         padding: 1rem;
         border: 1px solid var(--lavender);
         border-radius: 1rem;
         color: var(--text);
+        resize: vertical;
       }
     }
 
