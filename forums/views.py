@@ -34,3 +34,9 @@ def thread_detail(request, forum_slug, thread_slug):
     posts = thread.post_set.all()
     context = {"thread": thread, "posts": posts, "form": form}
     return render(request, "forums/thread.html", context)
+
+
+def forum_create(request, forum_slug):
+    forum = get_object_or_404(Forum, slug=forum_slug)
+
+    return render(request, "forums/create_forum.html")

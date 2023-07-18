@@ -10,7 +10,7 @@
                 <span>&nbsp;{{ forum.name }}</span>
             </li>
         </ul>
-        <a href="/" class="generic-button">
+        <a href="{% url 'forum_create' forum.slug %}" class="generic-button">
             Create Forum
         </a>
         {% if threads %}
